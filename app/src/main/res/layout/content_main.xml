@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.jonat_000.assignment1.MainActivity"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Amount"
+        android:id="@+id/lblAmt"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtAmt"
+        android:layout_alignTop="@+id/lblAmt"
+        android:layout_centerHorizontal="true"
+        android:inputType="numberDecimal"
+        android:hint="Input Bill Total" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Tip%"
+        android:id="@+id/lblTipPercent"
+        android:layout_below="@+id/txtAmt"
+        android:layout_alignParentStart="true" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spnTipPercent"
+        android:layout_below="@+id/txtAmt"
+        android:layout_toEndOf="@+id/lblAmt"
+        android:spinnerMode="dropdown" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtCustomTip"
+        android:enabled="false"
+        android:inputType="numberDecimal"
+        android:hint="Enter Desired Tip %"
+        android:layout_below="@+id/txtAmt"
+        android:layout_toEndOf="@+id/txtAmt" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="# People"
+        android:id="@+id/lblNumPeople"
+        android:layout_below="@+id/spnTipPercent"
+        android:layout_alignParentStart="true" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spnNumPeople"
+        android:layout_below="@+id/spnTipPercent"
+        android:layout_toEndOf="@+id/lblNumPeople"
+        android:spinnerMode="dropdown" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculate"
+        android:id="@+id/btnCalc"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/spnNumPeople"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clear"
+        android:id="@+id/btnClear"
+        android:onClick="clearForm"
+        android:layout_alignTop="@+id/btnCalc"
+        android:layout_alignStart="@+id/txtCustomTip" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Total is : $165.00"
+        android:id="@+id/lblTotal"
+        android:layout_marginTop="19dp"
+        android:layout_below="@+id/lblAmount"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Per Person: $55.00"
+        android:id="@+id/lblPerPerson"
+        android:layout_below="@+id/lblTotal"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="19dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Tip is : $15.00"
+        android:id="@+id/lblAmount"
+        android:layout_below="@+id/btnCalc"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="43dp" />
+
+</RelativeLayout>
